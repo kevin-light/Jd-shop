@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Complex Layout - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="/Statics/Plugins/jquery-easyui-1.5.3/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="/Statics/Plugins/jquery-easyui-1.5.3/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/Statics/Plugins/jquery-easyui-1.5.3/demo.css">
+	<script type="text/javascript" src="/Statics/Plugins/jquery-easyui-1.5.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/Statics/Plugins/jquery-easyui-1.5.3/jquery.easyui.min.js"></script>
+	<style>
+		.jd-menu{
+			display: block;
+			padding:8px;
+			border-bottom:1px solid #dddddd;
+		}
+		.active{
+			background-color: #3b5998;
+			color: white;
+		}
+	</style>
+</head>
+<body class="easyui-layout">
+
+		<div data-options="region:'north'" style="height:50px"></div>
+		<div data-options="region:'south',split:true" style="height:50px;"></div>
+		<div data-options="region:'west',split:true" title="菜单" style="width:200px;">
+			<div class="easyui-accordion" id="aa" data-options="fit:true,border:false">
+				<div title="区域管理">
+					<a class="jd-menu" id="province" href="/province">省</a>
+					<a class="jd-menu">市</a>
+					<a class="jd-menu">县(区)</a>
+				</div>
+				<div title="用户" style="padding:10px;">
+					content2
+				</div>
+				<div title="其他" data-options="selected:true" style="padding:10px">
+					content3
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center',title:'主页'">
+			{% block content %}{% end %}
+		</div>
+		{% block js %}{% end %}
+
+</body>
+</html>

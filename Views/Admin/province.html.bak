@@ -1,0 +1,32 @@
+
+<!--后台管理主页设置及分页：  方法—（easyUI）-->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+<!--//<h1>省份列表，当页面加载完成后，通过js给省添加一个样式</h1>-->
+<table class="easyui-datagrid"
+       title="省份列表"
+       data-options="
+			pagination:true,
+			singleSelect:true,
+			url:'/province_data',
+			method:'get'
+                ">
+		<thead>
+			<tr>
+				<th data-options="field:'nid',width:80">ID</th>
+                    <th data-options="field:'caption',width:100">省份</th>
+                </tr>
+            </thead>
+        </table>
+{% end %}}
+
+{% block js %}
+    <script>
+        $(function () {
+            $('#province').addClass('active');          //选中的菜单添加背景颜色
+            $('#aa').accordion('select','区域管理');     //点击左侧菜单时默认选中该项
+        })
+    </script>
+{% end %}}
